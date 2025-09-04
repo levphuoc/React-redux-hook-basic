@@ -9,12 +9,7 @@ function App() {
       <div className='app-header'>
         <Header />
       </div>
-      <div className='app-content'>
-        <Outlet />
-        {/* app content */}
-      </div>
     </div>
   );
 }
-
 export default App;
