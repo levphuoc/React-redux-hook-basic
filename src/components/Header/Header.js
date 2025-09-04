@@ -2,25 +2,25 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#home">User</Nav.Link>
-            <Nav.Link href="#link">Admin</Nav.Link>
-           
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/users">User</Nav.Link>
+            <Nav.Link as={Link} to="/admins">Admin</Nav.Link>
           </Nav>
           <Nav>
-             <NavDropdown title="Settings" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Login</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Logout</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
+            <NavDropdown title="Settings" id="basic-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/logout">Logout</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/profile">
                 Profile
               </NavDropdown.Item>
             </NavDropdown>
@@ -29,6 +29,6 @@ const Header = () => {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default Header;
